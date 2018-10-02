@@ -155,10 +155,7 @@ while cell <= max(max(Imout)) % all labeled cells need to be assigned an outcome
     elseif sum(strcmp(cc, outcomes)) > 0 % first make sure that the selected charachter is one of the possible outcomes  
         for oi = 1:length(outcomes)
             if isequal(cc, outcomes{oi})
-                outcomes_list{oi} = [outcomes_list{oi} cell];
-                last_outcome = cc;
                 if isequal(cc, 'a')
-                    deathframe(end+1)=fr;
                     data(cell,104)=fr;
                 elseif isequal(cc,'d')
                     data(cell,104)=-1;
@@ -177,40 +174,16 @@ while cell <= max(max(Imout)) % all labeled cells need to be assigned an outcome
     
 end
 
-%%%% Extract data
-fluor = {'c2'};
-fluornames = {'cfp'};
+
 
 % Load the fr_start image data for each fluor
 for c = 1:length(fluor)
     images{c} = imread([moviepath, movieprefix, num2str(strN(fr_start, frameN)), moviepos, fluor{c}, '.tif']);
 end
 
-%%%% WARNING: The code below only works with one color data right now. Need to update.
-% Get all data associated with x_list cells
-im = images{1};
-figure; hold on
-for oi = 1:length(outcomes)
-    vals{oi} = [];
-    sizes{oi}=[];
-    for n = 1:length(outcomes_list{oi})
-        idx = find(Imout == outcomes_list{oi}(n));
-        vals{oi} = [vals{oi} mean(im(idx))];
-        sizes{oi}= [sizes{oi} length(im(idx))];
-    end
-    if ~isempty(vals{oi})
-        plot(oi, vals{oi}, 'b.');
-    end
-end
 
-save([segpath, 'outcomes_data'], 'outcomes', 'outcomes_names', 'vals','deathframe','sizes')
+
 
 save([segpath,posmod,'/clist.mat'], 'data', 'data3D', 'def', 'def3D','Experiment');
 
-set(gca, 'XLim', [0 length(outcomes)+1], 'XTick', 1:length(outcomes), 'XTickLabel', outcomes_names);
-ylabel('Fluorescense')
-if length(deathframe)~= length(outcomes_list{1})
-disp(['warning deathfame is length ', num2str(length(deathframe)),' number of cells at that length is ', num2str(length(outcomes_list{1}))])
-end
-save([segpath, 'outcomes_data'], 'outcomes', 'outcomes_names', 'vals','deathframe','sizes')
 end
