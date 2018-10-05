@@ -69,9 +69,13 @@ list = {'marRAB','acrAB','InaA','SoxS','ompF','hdeA','purA','micF','gadX','sodA'
 [indx,tf] = listdlg('PromptString','Select Promoter:','ListString',list);
 
 Experiment={list{indx},'50 carb'};
+tempvar=strsplit(moviepos,'y');
 posmod=moviepos;
-posmod(regexp(posmod,'[0]'))=[];
 
+if str2num(tempvar{2})<10
+    posmod(regexp(posmod,'[0]'))=[];
+end
+    
 load([segpath,posmod,'/seg/', movieprefix, '01', moviepos,'_seg','.mat'],'mask_cell') % Load segmentation data for fr_start
 load([segpath,posmod,'/clist.mat'],'data', 'data3D', 'def', 'def3D');
 
@@ -79,7 +83,7 @@ load([segpath,posmod,'/clist.mat'],'data', 'data3D', 'def', 'def3D');
 NewCol = NaN(arrayRows,1);
 %Add new column
 data = [data NewCol];
-def=[def,'Time of Death'];
+def={def{:},'Time of Death'};
 
 Imout=bwlabel(mask_cell);
 
@@ -100,13 +104,11 @@ hTxt = uicontrol('Style','text', 'Position',[290 28 20 15], 'String', num2str(fr
     end
 
 
-for oi = 1:length(outcomes)
-    outcomes_list{oi} = [];
-end
+
 
 cell = 1;
 last_outcome = '';
-deathframe=[];
+
 while cell <= max(max(Imout)) % all labeled cells need to be assigned an outcome
     
     disp(['Cell #: ', num2str(cell)])
@@ -144,28 +146,24 @@ while cell <= max(max(Imout)) % all labeled cells need to be assigned an outcome
     end
     cc=get(gcf,'currentcharacter');
     disp(cc)
-    if isequal(cc, 'u') && ~isempty(last_outcome) % undo last assignment, assuming their was one
+    if isequal(cc, 'u') % undo last assignment, assuming their was one
         cell = cell - 1;
-        for oi = 1:length(outcomes)
-            if isequal(last_outcome, outcomes{oi})
-                outcomes_list{oi} = outcomes_list{oi}(1:end-1);
-                last_outcome = '';
-            end
-        end
+
     elseif sum(strcmp(cc, outcomes)) > 0 % first make sure that the selected charachter is one of the possible outcomes  
         for oi = 1:length(outcomes)
             if isequal(cc, outcomes{oi})
                 if isequal(cc, 'a')
-                    data(cell,104)=fr;
+                    data(cell,end)=fr;
                 elseif isequal(cc,'d')
-                    data(cell,104)=-1;
+                    data(cell,end)=-1;
                 elseif isequal(cc,'s')
-                    data(cell,104)=0;
+                    data(cell,end)=0;
                 elseif isequal(cc,'f')
-                    data(cell,104)=NaN(1,1);
+                    data(cell,end)=NaN(1,1);
                 end
             end
         end
+
         cell = cell + 1;
     else
         disp(['"', cc, '" is not a valid selection. Please try again.'])
@@ -177,13 +175,11 @@ end
 
 
 % Load the fr_start image data for each fluor
-for c = 1:length(fluor)
-    images{c} = imread([moviepath, movieprefix, num2str(strN(fr_start, frameN)), moviepos, fluor{c}, '.tif']);
-end
 
 
 
 
 save([segpath,posmod,'/clist.mat'], 'data', 'data3D', 'def', 'def3D','Experiment');
-
+[y,Fs] = audioread('finish.wav');
+sound(y,Fs);
 end
