@@ -1,11 +1,11 @@
 
 
 
-movieprefix = 'smkcfpt';
+movieprefix = 'rmbp1t';
 
-moviepos = 'xy5';
+moviepos = 'xy04';
 
-moviepath = 'E:\raw_data\2018\9_25_18\tiffs400mins\';
+moviepath = '/Users/nicholasrossi/Documents/work_docs/lab_work/2018/9_25_18/rmbp1/';
 
  
 segpath = [moviepath, 'segmented_', moviepos, '/'];

@@ -65,7 +65,7 @@ if ~exist([segpath,moviepos,'/seg/', movieprefix, '01', moviepos,'_seg','.mat'])
     processExp(segpath)
 end
 list = {'marRAB','acrAB','InaA','SoxS','ompF','hdeA','purA','micF','gadX','sodA','tolC','crp','sigma70' ...
-'lacuv5','rpsT','Fis','H-NS','rrnbp1','rob','lacZ','tonB','CodB','ompC','mutD'};
+'lacuv5','rpsT','Fis','H-NS','rrnbp1','rob','lacZ','tonB','CodB','ompC','dnaQ'};
 [indx,tf] = listdlg('PromptString','Select Promoter:','ListString',list);
 
 Experiment={list{indx},'50 carb'};
