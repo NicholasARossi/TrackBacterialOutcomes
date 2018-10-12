@@ -7,7 +7,7 @@ import scipy.io as sio
 def main():
     folders = ['dnaq_collected', 'fis_collected', 'tonb_collected', 'codb_collected', 'marrab_collected',
                'gadx_collected', 'crp_collected', 'ompf_collected', 'sigma_collected', 'soxs_collected',
-               'purA_collected', 'hdea_collected', 'rob_collected','rnbp1_collected','acrab_collected','inaa_collected','rpst_collected']
+               'purA_collected', 'hdea_collected', 'rob_collected','rnbp1_collected','acrab_collected','inaa_collected','rpst_collected','micf_collected']
 
 
 
