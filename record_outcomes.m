@@ -39,7 +39,7 @@ for fr = fr_start:fr_end
     Imorig = imread([moviepath, movieprefix, strN(fr, frameN), moviepos, 'c1.tif']);
     
     % This loads the PI channel
-    rim = imread([moviepath, movieprefix,  strN(fr, frameN), moviepos, 'c3.tif']);
+    rim = imread([moviepath, movieprefix,  strN(fr, frameN), moviepos, 'c4.tif']);
 
     Im = double(Imorig);
     Im = Im/maxmax(Im);
@@ -65,7 +65,7 @@ if ~exist([segpath,moviepos,'/seg/', movieprefix, '01', moviepos,'_seg','.mat'])
     processExp(segpath)
 end
 list = {'marRAB','acrAB','InaA','SoxS','ompF','hdeA','purA','micF','gadX','sodA','tolC','crp','sigma70' ...
-'lacuv5','rpsT','Fis','H-NS','rrnbp1','rob','lacZ','tonB','CodB','ompC','dnaQ'};
+'lacuv5','rpsT','Fis','H-NS','rrnbp1','rob','lacZ','tonB','CodB','ompC','dnaQ','purAinaA'};
 [indx,tf] = listdlg('PromptString','Select Promoter:','ListString',list);
 
 Experiment={list{indx},'50 carb'};

@@ -5,7 +5,7 @@ import scipy.io as sio
 
 
 def main():
-    folders = ['ms_collected']
+    folders = ['ppi_collected']
 
 
 

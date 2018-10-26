@@ -1,11 +1,11 @@
 
 
 
-movieprefix = 'rmbp1t';
+movieprefix = 'ppit';
 
-moviepos = 'xy04';
+moviepos = 'xy10';
 
-moviepath = '/Users/nicholasrossi/Documents/work_docs/lab_work/2018/9_25_18/rmbp1/';
+moviepath = '/Users/nicholasrossi/Documents/work_docs/lab_work/2018/9_25_18/ppi/';
 
  
 segpath = [moviepath, 'segmented_', moviepos, '/'];
