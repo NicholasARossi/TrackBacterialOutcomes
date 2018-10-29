@@ -5,7 +5,7 @@ import scipy.io as sio
 
 
 def main():
-    folders = ['sgadxk_cipro_2mg-L','srobk_cipro_2mg-L','smk_cipro_2mg-L']
+    folders = ['sgadxk_cipro_2mg-L','srobk_cipro_2mg-L','smk_cipro_2mg-L','spurAk_cipro_2mg-L','shdeAk_cipro_2mg-L','sigma_k_cipro_2mg-L','sinaAk_cipro_2mg-L']
 
 
     for folder in folders:
