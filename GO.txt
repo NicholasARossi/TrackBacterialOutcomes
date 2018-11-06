@@ -1,0 +1,44 @@
+﻿purA → metabolism → biosynthesis of building blocks → nucleotides → purine biosynthesis
+purA → metabolism → biosynthesis of building blocks → nucleotides → purine biosynthesis
+purA → metabolism → central intermediary metabolism → nucleotide and nucleoside conversions
+inaA → cell processes → adaptations → pH
+rob → information transfer → DNA related → DNA replication
+rob → information transfer → protein related → nucleoproteins, basic proteins
+rob → information transfer → RNA related → Transcription related
+rob → regulation → genetic unit regulated → regulon
+rob → regulation → type of regulation → transcriptional level → activator
+gadX → information transfer → RNA related → Transcription related
+gadX → regulation → type of regulation → transcriptional level → activator
+hdeA → cell processes → adaptations → pH
+hdeA → cell processes → defense/survival
+crp → information transfer → RNA related → Transcription related
+crp → regulation → genetic unit regulated → global
+crp → regulation → type of regulation → transcriptional level → activator
+crp → regulation → type of regulation → transcriptional level → repressor
+soxs → cell processes → adaptations → other (mechanical, nutritional, oxidative stress)
+soxs → cell processes → protection → detoxification
+soxs → information transfer → RNA related → Transcription related
+soxs → regulation → genetic unit regulated → regulon
+soxs → regulation → type of regulation → transcriptional level → activator
+soxs → regulation → type of regulation → transcriptional level → repressor
+rrnbp1 → cell structure → ribosomes
+rrnbp1 → information transfer → protein related → translation
+rrnbp1 → information transfer → RNA related → rRNA, stable RNA
+acrAB → cell processes → protection → drug resistance/sensitivity
+acrAB → cell structure → membrane
+acrAB → transport → Electrochemical potential driven transporters → Porters (Uni-, Sym- and Antiporters)
+sigma70 → information transfer → RNA related → Transcription related
+sigma70 → regulation → genetic unit regulated → stimulon
+sigma70 → regulation → type of regulation → transcriptional level → sigma factors, anti-sigmafactors
+sodA → cell processes → protection → detoxification
+codB → cell structure → membrane
+codB → metabolism → central intermediary metabolism → nucleotide and nucleoside conversions
+codB → transport → Electrochemical potential driven transporters → Porters (Uni-, Sym- and Antiporters)
+ompF → transport → Channel-type Transporters → Beta barrel porins (The Outer Membrane Porin (OMP) Functional Superfamily)
+dnaQ → information transfer → DNA related → DNA replication
+dnaQ → information transfer → protein related → chaperoning, repair (refolding)
+fis → information transfer → DNA related → DNA recombination
+fis → information transfer → protein related → nucleoproteins, basic proteins
+fis → information transfer → RNA related → Transcription related
+fis → regulation → type of regulation → transcriptional level → activator
+fis → regulation → type of regulation → transcriptional level → repressor
